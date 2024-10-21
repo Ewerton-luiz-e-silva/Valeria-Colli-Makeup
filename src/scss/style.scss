@@ -1,0 +1,6 @@
+// Importa os módulos de estilo necessários para o projeto
+@use 'variables'; // Importa o arquivo de variáveis que contém as cores, tipografia e outras constantes
+@use 'base'; // Importa o arquivo de estilos básicos para aplicar estilos globais
+@use 'navbar'; // Importa o arquivo de estilos para a barra de navegação
+@use 'sections'; // Importa o arquivo de estilos para as seções do conteúdo
+@use 'footer'; // Importa o arquivo de estilos para o rodapé

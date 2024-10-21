@@ -1,0 +1,12 @@
+@use 'variables'; // Importa o arquivo de variáveis para utilizar no estilo do rodapé
+
+footer {
+    background-color: variables.$primary-color; // Define a cor de fundo do rodapé usando a variável de cor primária
+    padding: 2rem; // Define um espaçamento interno de 2rem ao redor do conteúdo do rodapé
+    text-align: center; // Alinha o texto no centro do rodapé
+    color: #fff; // Define a cor do texto como branco
+
+    p {
+        margin: 0; // Remove qualquer margem dos parágrafos dentro do rodapé
+    }
+}

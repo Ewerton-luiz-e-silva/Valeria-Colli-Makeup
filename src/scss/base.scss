@@ -1,0 +1,30 @@
+@use 'variables'; // Importa o arquivo de variáveis para utilizar no estilo global
+
+* {
+    margin: 0; // Remove a margem de todos os elementos
+    padding: 0; // Remove o preenchimento de todos os elementos
+}
+
+body {
+    font-family: variables.$font-family-main; // Define a fonte principal do corpo usando a variável
+    font-size: variables.$font-size-base; // Define o tamanho da fonte base usando a variável
+    background-color: variables.$background-color; // Define a cor de fundo do corpo usando a variável
+    color: variables.$text-color; // Define a cor do texto usando a variável
+    overflow-x: hidden; // Oculta a rolagem horizontal
+}
+
+h1, h2, h3, h4, h5 {
+    color: variables.$primary-color; // Define a cor dos cabeçalhos (h1, h2, h3, h4, h5) usando a variável
+}
+
+p {
+    margin-bottom: 1.5rem; // Define a margem inferior dos parágrafos para espaçamento
+}
+
+@media (max-width: 768px) { // Estilos para dispositivos com largura máxima de 768px
+    * {
+        margin: 0; // Remove a margem de todos os elementos
+        padding: 0; // Remove o preenchimento de todos os elementos
+        overflow-x: hidden; // Oculta a rolagem horizontal
+    }
+}

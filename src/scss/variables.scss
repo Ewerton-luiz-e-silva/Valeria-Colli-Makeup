@@ -1,0 +1,43 @@
+// Cores principais usadas no projeto
+$primary-color: #f72585;         // Cor primária: rosa vibrante
+$secondary-color: #f7b4d2;       // Cor secundária: rosa claro
+$text-color: #2d3436;            // Cor do texto: cinza escuro
+$background-color: #ffe5ec;      // Cor de fundo: rosa pálido
+$accent-color: #e84393;          // Cor de destaque: rosa forte
+
+// Configurações de tipografia
+$font-family-main: 'Great_Vibes', sans-serif; // Fonte principal utilizada no projeto
+$font-size-base: 16px;                        // Tamanho base da fonte: 16px
+
+// Definição de uma face de fonte personalizada 'Great Vibes'
+@font-face {
+    font-family: 'Great Vibes'; // Nome da fonte
+    src: url('../Fontes/Great_Vibes/GreatVibes-Regular.woff2') format('woff2'),   // Fonte no formato woff2
+        url('../Fontes/Great_Vibes/GreatVibes-Regular.woff') format('woff'),      // Fonte no formato woff
+        url('../Fontes/Great_Vibes/GreatVibes-Regular.ttf') format('truetype');   // Fonte no formato truetype
+    font-weight: 400;            // Peso da fonte: normal
+    font-display: swap;          // Mecanismo de fallback rápido para troca de fonte
+    font-style: normal;          // Estilo da fonte: normal
+}
+
+// Definição de uma face de fonte personalizada 'Allura'
+@font-face {
+    font-family: 'Allura'; // Nome da fonte
+    src: url('../Fontes/Allura/Allura-Regular.ttf') format('woff2'),    // Fonte no formato woff2
+        url('../Fontes/Allura/Allura-Regular.ttf') format('woff'),      // Fonte no formato woff
+        url('../Fontes/Allura/Allura-Regular.ttf') format('truetype');  // Fonte no formato truetype
+    font-weight: 400;          // Peso da fonte: normal
+    font-display: swap;        // Mecanismo de fallback rápido para troca de fonte
+    font-style: normal;        // Estilo da fonte: normal
+}
+
+// Definição de uma face de fonte personalizada 'ArchitectsDaughter-Regular'
+@font-face {
+    font-family: 'ArchitectsDaughter-Regular'; // Nome da fonte
+    src: url('../Fontes/Architects_Daughter/ArchitectsDaughter-Regular.ttf') format('woff2'),   // Fonte no formato woff2
+        url('../Fontes/Architects_Daughter/ArchitectsDaughter-Regular.ttf') format('woff'),     // Fonte no formato woff
+        url('../Fontes/Architects_Daughter/ArchitectsDaughter-Regular.ttf') format('truetype'); // Fonte no formato truetype
+    font-weight: 400;        // Peso da fonte: normal
+    font-display: swap;      // Mecanismo de fallback rápido para troca de fonte
+    font-style: normal;      // Estilo da fonte: normal
+}

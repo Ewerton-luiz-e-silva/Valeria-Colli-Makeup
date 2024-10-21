@@ -1,0 +1,142 @@
+@use 'variables'; // Importa o arquivo de variáveis Sass para utilizar no estilo
+
+.fixed-button {
+    position: fixed; // Fixa o botão na tela
+    display: none; // Esconde o botão por padrão
+    align-items: center; // Alinha os itens no centro verticalmente
+    justify-content: center; // Alinha os itens no centro horizontalmente
+    width: 60px; // Define a largura do botão
+    height: 60px; // Define a altura do botão
+    border-radius: 10%; // Define bordas arredondadas
+    background-color: #fff; // Cor de fundo branca
+    color: #000; // Cor do texto preta
+    cursor: pointer; // Muda o cursor ao passar sobre o botão
+    z-index: 1000; // Garante que o botão fique sobreposto a outros elementos
+    opacity: 0; // Define a opacidade inicial como invisível
+    transition: opacuty 0.5s ease box-shadow 0.5s ease; // Transição suave para opacidade e sombra
+
+    img {
+        width: 60px; // Define a largura da imagem dentro do botão
+        height: 60px; // Define a altura da imagem
+        color: #fff; // Cor da imagem (caso aplicável)
+        border-radius: 10px; // Define bordas arredondadas na imagem
+    }
+}
+
+#backToTop {
+    bottom: 30px; // Posição 30px da parte inferior
+    left: 30px; // Posição 30px da esquerda
+    background-color: transparent; // Fundo transparente
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); // Sombra ao redor do botão
+    animation: pulse 2s infinite; // Animação de pulsação contínua
+}
+
+#whatsappButton {
+    bottom: 30px; // Posição 30px da parte inferior
+    right: 30px; // Posição 30px da direita
+    background-color: transparent; // Fundo transparente
+    box-shadow: 0px 0px 10px rgba(19, 29, 19, 0.5); // Sombra ao redor do botão
+    animation: pulse 2s infinite; // Animação de pulsação contínua
+}
+
+.navbar {
+    background-color: variables.$primary-color; // Cor de fundo da navbar usando a variável
+    color: variables.$text-color; // Cor do texto da navbar usando a variável
+    height: auto; // Altura automática
+    width: 100%; // Largura completa
+
+    .navbar-brand {
+        color: #fff; // Cor branca para a marca da navbar
+        font-size: 30px; // Tamanho da fonte da marca
+        margin-left: 15px; // Margem à esquerda
+        font-family: 'Great Vibes', sans-serif; // Fonte personalizada para a marca
+
+        img {
+            width: 80px; // Largura da imagem dentro da marca
+            height: 80px; // Altura da imagem
+            margin-right: 15px; // Margem à direita da imagem
+        }
+    }
+}
+
+.navbar-nav {
+    align-items: center; // Alinha verticalmente os itens da navbar
+    font-size: 25px; // Define o tamanho da fonte dos itens da navbar
+
+    .nav-item {
+        border: 2px solid transparent; // Define uma borda transparente padrão
+        border-radius: 10px; // Bordas arredondadas nos itens de navegação
+        font-family: 'Allura', sans-serif; // Fonte personalizada para os itens
+
+        &:hover {
+            border: 2px solid #000; // Adiciona uma borda preta ao passar o mouse
+        }
+    }
+}
+
+.navbar-collapse {
+    justify-content: space-around; // Espaça os itens da navbar uniformemente
+}
+
+.nav-item .nav-link {
+    color: #fff; // Cor branca para os links de navegação
+}
+
+.icon-carrossel {
+    width: 40px; // Largura dos ícones do carrossel
+    height: 40px; // Altura dos ícones do carrossel
+}
+
+.nav-link {
+    color: #fff; // Cor branca para o texto dos links
+    position: relative; // Define o posicionamento relativo para permitir o efeito de underline
+    transition: color 0.3s ease; // Transição suave para a cor ao passar o mouse
+
+    &:hover {
+        color: variables.$accent-color; // Muda para a cor de destaque ao passar o mouse
+    }
+
+    &::after {
+        content: ''; // Define o conteúdo vazio para o efeito de underline
+        position: absolute; // Posiciona o underline relativo ao link
+        width: 0; // Largura inicial do underline é 0
+        height: 5px; // Altura do underline
+        background-color: #000814; // Cor do underline
+        left: 0; // Posiciona o underline à esquerda
+        bottom: -5px; // Posiciona o underline logo abaixo do link
+        transition: width 0.3s ease; // Transição suave ao animar a largura do underline
+        border-radius: 50px; // Bordas arredondadas para o underline
+    }
+
+    &.active::after {
+        width: 100%; // Aumenta a largura do underline quando o link está ativo
+    }
+}
+
+.navbar-toggler-icon {
+    background-color: transparent; // Fundo transparente para o ícone do toggler da navbar
+}
+
+.navbar-toggler-icon:hover {
+    background-color: variables.$secondary-color; // Muda a cor de fundo ao passar o mouse
+    border-radius: 10%; // Bordas arredondadas no ícone do toggler
+}
+
+// Estilos para telas menores que 768px
+@media (max-width: 768px) {
+
+    .navbar {
+        .navbar-brand {
+            padding: 0;
+            color: #fff; // Cor branca para a marca da navbar
+            font-size: 20px; // Tamanho da fonte da marca
+            margin-left: 0; // Margem à esquerda reduzida para dispositivos menores
+        }
+    }
+
+    .navbar-nav {
+        align-items: center; // Alinha verticalmente os itens da navbar
+        font-size: 30px; // Tamanho da fonte reduzido para dispositivos menores
+    }
+
+}
