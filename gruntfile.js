@@ -50,19 +50,19 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // Configuração da tarefa de otimização de imagens
-        imagemin: {
-            dynamic: { // Opcionais de otimização dinâmica
+        // Configuração da tarefa de cópia do index.html para a pasta dist
+        copy: {
+            html: {
                 files: [{
                     expand: true,
-                    cwd: 'src/img/', // Diretório de origem
-                    src: ['**/*.{png,jpg,jpeg,gif,svg}'], // Tipos de arquivos de imagem a serem otimizados
-                    dest: 'dist/img/' // Diretório de destino
+                    cwd: 'src/',
+                    src: ['index.html'], // Ajuste conforme o nome do seu HTML
+                    dest: 'dist/',
+                    rename: function (dest, src) {
+                        return dest + src; // Mantém o mesmo nome
+                    }
                 }]
-            }
-        },
-        // Configuração da tarefa de cópia das fontes
-        copy: {
+            },
             fonts: {
                 files: [{
                     expand: true,
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
             },
             html: {
                 files: ['src/*.html'], // Observa mudanças nos arquivos HTML
-                tasks: ['htmlmin'] // Minifica os arquivos HTML ao detectar mudanças
+                tasks: ['htmlmin', 'copy:html'] // Minifica os arquivos HTML e copia o index.html ao detectar mudanças
             },
             images: {
                 files: ['src/img/**/*.{png,jpg,jpeg,gif,svg}'], // Observa mudanças nas imagens
@@ -122,7 +122,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect'); // Carregar o módulo connect
 
     // Registra as tarefas padrão
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'connect:server', 'watch']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'copy:html', 'connect:server', 'watch']);
 };
-
-
