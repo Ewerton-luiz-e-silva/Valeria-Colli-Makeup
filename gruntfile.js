@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         // Configuração da tarefa de compilação do Sass usando grunt-dart-sass
-        'dart-sass': {  // Renomeie a tarefa para 'dart-sass'
+        'dart-sass': {
             options: {
                 implementation: sass, // Define a implementação como Dart Sass
                 sourceMap: true
@@ -87,23 +87,38 @@ module.exports = function (grunt) {
         watch: {
             styles: {
                 files: ['src/scss/*.scss'], // Observa mudanças nos arquivos SCSS
-                tasks: ['dart-sass', 'cssmin'] // Compila e minifica o CSS ao detectar mudanças
+                tasks: ['dart-sass', 'cssmin'], // Compila e minifica o CSS ao detectar mudanças
+                options: {
+                    spawn: false // Evita o spawn de novos processos, melhora a performance
+                }
             },
             scripts: {
                 files: ['src/js/*.js'], // Observa mudanças nos arquivos JS
-                tasks: ['uglify'] // Minifica os arquivos JS ao detectar mudanças
+                tasks: ['uglify'], // Minifica os arquivos JS ao detectar mudanças
+                options: {
+                    spawn: false
+                }
             },
             html: {
                 files: ['src/*.html'], // Observa mudanças nos arquivos HTML
-                tasks: ['htmlmin', 'copy:html'] // Minifica os arquivos HTML e copia o index.html ao detectar mudanças
+                tasks: ['htmlmin', 'copy:html'], // Minifica os arquivos HTML e copia o index.html ao detectar mudanças
+                options: {
+                    spawn: false
+                }
             },
             images: {
                 files: ['src/img/**/*.{png,jpg,jpeg,gif,svg}'], // Observa mudanças nas imagens
-                tasks: ['imagemin'] // Otimiza imagens ao detectar mudanças
+                tasks: ['imagemin'], // Otimiza imagens ao detectar mudanças
+                options: {
+                    spawn: false
+                }
             },
             fonts: {
                 files: ['src/Fontes/**/*.{ttf,woff,woff2,eot,svg}'], // Observa mudanças nas fontes
-                tasks: ['copy:fonts'] // Copia as fontes ao detectar mudanças
+                tasks: ['copy:fonts'], // Copia as fontes ao detectar mudanças
+                options: {
+                    spawn: false
+                }
             },
         }
     });
@@ -120,3 +135,4 @@ module.exports = function (grunt) {
     // Registra as tarefas padrão
     grunt.registerTask('default', ['dart-sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'copy:html']);
 };
+
