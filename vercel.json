@@ -1,9 +1,15 @@
 {
-"name": "Valeria-Colli-Makeup",
+"version": 2,
 "builds": [
     {
-    "src": "dist/index.html",
+    "src": "dist/index.min.html", // Após a compilação, o arquivo deve estar aqui
     "use": "@vercel/static"
+    }
+],
+"routes": [
+    {
+    "src": "/(.*)",
+    "dest": "/dist/$1" // Serve o conteúdo da pasta dist
     }
 ]
 }
