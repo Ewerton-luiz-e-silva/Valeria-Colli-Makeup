@@ -1,0 +1,9 @@
+{
+"name": "Valeria-Colli-Makeup",
+"builds": [
+    {
+    "src": "dist/index.html",
+    "use": "@vercel/static"
+    }
+]
+}
