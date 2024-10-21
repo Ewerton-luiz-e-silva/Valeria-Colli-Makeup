@@ -72,15 +72,15 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // Configuração do servidor
-        connect: {
-            server: {
-                options: {
-                    port: 8000, // Porta do servidor
-                    base: 'dist', // Diretório que o servidor irá servir
-                    livereload: true, // Ativa o LiveReload
-                    open: true // Abre o navegador automaticamente
-                }
+        // Configuração da tarefa de otimização de imagens
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/img/', // Diretório de origem
+                    src: ['**/*.{png,jpg,jpeg,gif,svg}'], // Tipos de arquivos de imagem a serem otimizados
+                    dest: 'dist/img/' // Diretório de destino
+                }]
             }
         },
         // Observação de mudanças nos arquivos Sass, JavaScript, HTML e Fontes
@@ -105,9 +105,6 @@ module.exports = function (grunt) {
                 files: ['src/Fontes/**/*.{ttf,woff,woff2,eot,svg}'], // Observa mudanças nas fontes
                 tasks: ['copy:fonts'] // Copia as fontes ao detectar mudanças
             },
-            options: {
-                livereload: true // Ativa o LiveReload
-            }
         }
     });
 
@@ -119,8 +116,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin'); // Carregar o módulo imagemin
     grunt.loadNpmTasks('grunt-contrib-copy'); // Carregar o módulo de cópia
-    grunt.loadNpmTasks('grunt-contrib-connect'); // Carregar o módulo connect
 
     // Registra as tarefas padrão
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'copy:html', 'connect:server', 'watch']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'copy:html']);
 };
+
