@@ -2,8 +2,8 @@ module.exports = function (grunt) {
     const sass = require('sass'); // Importa o módulo sass
 
     grunt.initConfig({
-        // Configuração da tarefa de compilação do Sass usando grunt-sass
-        sass: {
+        // Configuração da tarefa de compilação do Sass usando grunt-dart-sass
+        'dart-sass': {  // Renomeie a tarefa para 'dart-sass'
             options: {
                 implementation: sass, // Define a implementação como Dart Sass
                 sourceMap: true
@@ -87,7 +87,7 @@ module.exports = function (grunt) {
         watch: {
             styles: {
                 files: ['src/scss/*.scss'], // Observa mudanças nos arquivos SCSS
-                tasks: ['sass', 'cssmin'] // Compila e minifica o CSS ao detectar mudanças
+                tasks: ['dart-sass', 'cssmin'] // Compila e minifica o CSS ao detectar mudanças
             },
             scripts: {
                 files: ['src/js/*.js'], // Observa mudanças nos arquivos JS
@@ -109,15 +109,14 @@ module.exports = function (grunt) {
     });
 
     // Carrega os módulos Grunt necessários
-    grunt.loadNpmTasks('grunt-sass'); // Carregar o módulo grunt-sass
+    grunt.loadNpmTasks('grunt-dart-sass'); // Carregar o módulo grunt-dart-sass
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin'); // Carregar o módulo htmlmin
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-imagemin'); // Carregar o módulo imagemin
-    grunt.loadNpmTasks('grunt-contrib-copy'); // Carregar o módulo de cópia
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Registra as tarefas padrão
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'copy:html']);
+    grunt.registerTask('default', ['dart-sass', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'copy:fonts', 'copy:html']);
 };
-
