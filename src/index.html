@@ -195,30 +195,30 @@
         <p class="section-description text-center">
             Tem alguma dúvida ou sugestão? Preencha o formulário abaixo e entraremos em contato o mais breve possível.
         </p>
-        <form class="contact-form">
+        <form action="https://formspree.io/f/mqakaloe" method="POST">
             <div class="row">
                 <div class="col-md-6 mb-2">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome completo" required>
                 </div>
                 <div class="col-md-6 mb-2">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Seu email" required>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Seu email" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-2">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" id="telefone" class="form-control" placeholder="Seu número de telefone" required>
+                    <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="Seu número de telefone" required>
                 </div>
                 <div class="col-md-6 mb-2">
                     <label for="assunto" class="form-label">Assunto</label>
-                    <input type="text" id="assunto" class="form-control" placeholder="Assunto da mensagem" required>
+                    <input type="text" id="assunto" name="assunto" class="form-control" placeholder="Assunto da mensagem" required>
                 </div>
             </div>
-            <div class="col-md-2 mb-1">
+            <div class="col-md-12 mb-2">
                 <label for="mensagem" class="form-label">Mensagem</label>
-                <textarea id="mensagem" class="form-control" rows="4" placeholder="Sua mensagem" required></textarea>
+                <textarea id="mensagem" name="mensagem" class="form-control" rows="4" placeholder="Sua mensagem" required></textarea>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-dark btn-lg">Enviar Mensagem</button>
@@ -226,6 +226,7 @@
         </form>
     </div>
 </section>
+
 
 
 <!--Footer-->
