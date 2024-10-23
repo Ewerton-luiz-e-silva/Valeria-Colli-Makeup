@@ -13,6 +13,13 @@ body {
     overflow-x: hidden; // Oculta a rolagem horizontal
 }
 
+.certificado-content {
+    display: none; /* Inicialmente oculta o conteúdo dos certificados */
+}
+.certificado-content.active {
+    display: block; /* Mostra o conteúdo ativo */
+}
+
 h1, h2, h3, h4, h5 {
     color: variables.$primary-color; // Define a cor dos cabeçalhos (h1, h2, h3, h4, h5) usando a variável
 }

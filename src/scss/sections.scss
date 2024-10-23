@@ -62,19 +62,38 @@
     }
 }
 
+.certificados-section {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.certificado-content {
+    border: 1px solid variables.$primary-color;
+    border-radius: 10px;
+    h4 {
+        font-family: 'Great Vibes', sans-serif;
+        text-align: center;
+        font-size: 30px;
+
+
+        img {
+            width: 50px;
+            height: auto;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: 25px;
+        font-family: 'ArchitectsDaughter-Regular' sans-serif;
+    }
+}
+
 // Seção de serviços
 .servicos-section {
     padding: 3rem 0; // Espaçamento vertical
     background-color: variables.$background-color; // Cor de fundo a partir das variáveis
     border-radius: 10px;
-    
-
-    h2 {
-        text-align: center; // Texto centralizado
-        margin-bottom: 2rem; // Margem inferior
-        font-size: 30px;
-        font-family: 'Great Vibes', sans-serif;
-    }
 
     // Estilo para os cartões de serviço
     .card {
@@ -99,7 +118,9 @@
             text-align: center;
             font-family: 'ArchitectsDaughter-Regular' sans-serif;
             font-size: 15px;
-            color: variables.$accent-color; // Cor do título do cartão
+            color: variables.$text-color; // Cor do título do cartão
+            text-align: justify; /* Justifica o texto */
+            line-height: 1;
         }
     }
 }

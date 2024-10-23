@@ -196,3 +196,14 @@ form.addEventListener('submit', function(event) {
   // Se todos os campos estiverem preenchidos corretamente, o formulário é enviado
   form.submit();
 });
+
+$(document).ready(function() {
+  // Ao clicar em um botão de certificado
+  $('button[data-target]').on('click', function() {
+      // Esconde todos os conteúdos de certificados
+      $('.certificado-content').removeClass('active');
+      // Mostra o conteúdo do certificado correspondente ao botão clicado
+      const target = $(this).data('target');
+      $(target).addClass('active');
+  });
+});
