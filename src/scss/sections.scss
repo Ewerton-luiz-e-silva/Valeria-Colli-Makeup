@@ -165,13 +165,17 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        text-align: justify; /* Justifica o texto */
 
         h2 {
             font-family: 'Great Vibes', sans-serif;
             margin-bottom: 2rem; // Margem inferior do título
             text-align: center; // Texto centralizado
         }
+
         p {
+            margin: 0; /* Remove margens, se necessário */
+            line-height: 1.5; /* Define a altura da linha para melhorar a legibilidade */
             font-family: 'ArchitectsDaughter-Regular' sans-serif;
             width: 100%;
         }

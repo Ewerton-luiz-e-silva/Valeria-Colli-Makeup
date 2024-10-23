@@ -25,6 +25,18 @@ footer {
             cursor: pointer;
             font-family: 'Allura', sans-serif;
             font-size: 25px;
+            margin: 5px;
+        
+            a {
+                 color: #fff; /* Substitua 'black' pela cor desejada */
+                text-decoration: none; /* Remove o sublinhado do texto do link */
+                
+
+                /* Se você quiser adicionar um efeito ao passar o mouse sobre o link */
+                &:hover {
+                    color: #000; /* Muda a cor do texto ao passar o mouse, se desejado */
+                }
+            }
 
             &:hover {
                 color: variables.$text-color;

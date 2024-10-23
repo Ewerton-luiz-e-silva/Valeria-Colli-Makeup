@@ -74,12 +74,12 @@
     </div>
   </section>
 
-  <section id="inicio" class="inicio-section" data-aos="fade-up">
+  <section id="inicio" class="inicio-section" data-aos="fade-up" data-aos-duration="2500">
     <h1>Bem-vindo ao Mundo da Beleza!</h1>
     <p>Transformando sua beleza com maquiagem personalizada.</p>
   </section>
 
-  <section id="servicos" class="servicos-section" data-aos="fade-right">
+  <section id="servicos" class="servicos-section" data-aos="fade-right" data-aos-duration="2500">
     <h2>Nossos Serviços</h2>
     <div class="container">
       <div class="row">
@@ -127,7 +127,7 @@
     </div>
   </section>
 
-  <section id="galeria" class="galeria-section" data-aos="fade-up">
+  <section id="galeria" class="galeria-section" data-aos="fade-up" data-aos-duration="2500">
     <h2>Galeria de Clientes</h2>
     <div class="container">
       <div class="row">
@@ -159,7 +159,7 @@
     </div>
   </section>
 
-  <section id="sobre" class="sobre-section" data-aos="fade-left">
+  <section id="sobre" class="sobre-section" data-aos="fade-left" data-aos-duration="2500">
     <div class="sobre-mim">
       <h2>Sobre Mim, Valéria </h2>
       <p>
@@ -189,13 +189,13 @@
 
   </section>
 
-  <section id="contato" class="contato-section" data-aos="fade-up">
+  <section id="contato" class="contato-section" data-aos="fade-up" data-aos-duration="2500">
     <div class="container">
         <h2 class="section-title text-center">Entre em Contato</h2>
         <p class="section-description text-center">
             Tem alguma dúvida ou sugestão? Preencha o formulário abaixo e entraremos em contato o mais breve possível.
         </p>
-        <form action="https://formspree.io/f/mqakaloe" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/mqakaloe" method="POST">
             <div class="row">
                 <div class="col-md-6 mb-2">
                     <label for="nome" class="form-label">Nome</label>
@@ -219,6 +219,8 @@
             <div class="col-md-3 mb-2">
                 <label for="mensagem" class="form-label">Mensagem</label>
                 <textarea id="mensagem" name="mensagem" class="form-control" rows="4" placeholder="Sua mensagem" required></textarea>
+                <small id="char-count" class="form-text text-muted">500 caracteres restantes</small>
+                <small id="feedback" class="form-text text-danger"></small>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-dark btn-lg">Enviar Mensagem</button>
@@ -235,13 +237,14 @@
 
     <div>
       <ul class="minu-menu">
-        <li href="#inicio">Início <img class="icon-carrossel" src="./img/icon vovi/inicio.gif" alt=""></a></li>
-        <li href="#servicos">Serviços <img class="icon-carrossel" src="./img/icon vovi/serviço.gif" alt=""></a></li>
-        <li href="#galeria">Galeria <img class="icon-carrossel" src="./img/icon vovi/galeria.gif" alt=""></a></li>
-        <li href="#sobre">Sobre <img class="icon-carrossel" src="./img/icon vovi/sobre.gif" alt=""></a></li>
-        <li href="#contato">Contato <img class="icon-carrossel" src="./img/icon vovi/contato.gif" alt=""></a></li>
+        <li><a href="#inicio">Início <img class="icon-carrossel" src="./img/icon vovi/inicio.gif" alt=""></a></li>
+        <li><a href="#servicos">Serviços <img class="icon-carrossel" src="./img/icon vovi/serviço.gif" alt=""></a></li>
+        <li><a href="#galeria">Galeria <img class="icon-carrossel" src="./img/icon vovi/galeria.gif" alt=""></a></li>
+        <li><a href="#sobre">Sobre <img class="icon-carrossel" src="./img/icon vovi/sobre.gif" alt=""></a></li>
+        <li><a href="#contato">Contato <img class="icon-carrossel" src="./img/icon vovi/contato.gif" alt=""></a></li>
       </ul>
     </div>
+    
   
       <div>
             <div class="social-icons-footer">
